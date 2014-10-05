@@ -16,7 +16,7 @@ var gulp = require('gulp'),
     _ = require('underscore.string'),
     inflection = require('inflection'),
     inquirer = require('inquirer'),
-    mkdirp = require('mkdirp');
+    mkdirp = require('mkdirp')
 
 // load generators
 gulp = require('./generators/app')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp);
