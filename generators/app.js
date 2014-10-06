@@ -9,9 +9,11 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
         name: 'level',
         message: 'Which Level would you like to start at?',
         choices: [
-          value: 'basic'
-          name: 'Basic',
-          default: true
+          {
+            value: 'basic',
+            name: 'Basic',
+            default: true
+          }
         ]
       },{
         name: 'appKeywords',
