@@ -1,0 +1,36 @@
+{
+  "id":4, "title": "Lets Build!", "state": "steps.lets-build"
+}
+{
+  "id": 4,
+  "back": "steps.file-structure",
+  "next": false,
+  "intro": "Lets Build!",
+  "blocks": ["Time to think about scalling this out!"],
+  "headers": [
+      "To scale, we are going to need a few things."
+    ],
+  "content": [
+    {
+      "title":"Node.js",
+      "type": "list",
+      "head": false,
+      "children": [
+        "Google's V8 engine.",
+        "Our app is pointless without the power of node.",
+        "Provides us with a server, data management, deployment, debugging, testing, automating tasks, and so much more."
+      ]
+    },{
+      "title": "Prepare your file structure for more.",
+      "type": "list",
+      "head": true,
+      "children": [
+        "Lets put everything that will be served and deployed into one directory.",
+        "I personally like calling the directory 'client', Some people call it 'public'",
+        "Lets go ahead and re-organize our directory.",
+        "Run the following in the command line"
+      ],
+      "pre":"slush build:client"
+    }
+  ]
+}

@@ -2,10 +2,19 @@
   <h2 class="blog-post-title">{{content.intro}}</h2>
   <!-- <p class="blog-post-meta">October 2014 by <a href="#">Joel<strong>Cox</strong></a></p> -->
   <hr>
+
+  <blockquote>
+    <p><strong>{{content.blocks[0]}}</strong></p>
+  </blockquote>
   <p ng-repeat="head in content.headers">{{head}}</p>
   <ul>
-    <li ng-repeat="cont in content.content[0].children">
-      {{cont}}
+    <li ng-repeat="thing in content.content"><strong>{{thing.title}}</strong>
+      <ul>
+        <li ng-repeat="child in thing.children">{{child}}</li>
+        <li ng-if="thing.pre">
+          <pre>{{thing.pre}}</pre>
+        </li>
+      </ul>
     </li>
   </ul>
 </div>

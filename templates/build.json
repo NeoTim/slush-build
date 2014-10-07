@@ -2,32 +2,43 @@
   "appName": "Build",
   "slugifiedAppName": "build",
   "humanizedAppName": "Build",
-  "capitalizedAppAuthor": "",
+  "capitalizedAppAuthor": "Joel",
   "level": "beginner",
   "states": [{
     "id": 1,
     "title": "Home",
     "state": "home"
-  }, {
+  },{
     "id": 2,
     "title": "File Structure",
     "state": "steps.file-structure"
+  },{
+    "id": 3,
+    "title": "The App",
+    "state": "steps.the-app"
+  },{
+    "id":4,
+    "title":"Lets Build!",
+    "state": "steps.lets-build"
   }],
-  "content": [{
-    "id": 1,
-    "intro": "Welcome!",
-    "headers": ["Lets Build a Fullstack Application!", "I will walk you through the following."],
-    "content": [{
-      "type": "list",
-      "head": false,
-      "children": ["The contents of your working directory.", "Working with the client side.", "App Architecture Best Practices.", "Angular js Best Practices"]
-    }]
-  }, {
+  "content": [
+    {
+      "id": 1,
+      "back": false,
+      "next": "steps.file-structure",
+      "intro": "Welcome!",
+      "headers": ["Lets Build a Fullstack Application!", "I will walk you through the following."],
+      "content": [{
+        "type": "list",
+        "head": false,
+        "children": ["The contents of your working directory.", "Working with the client side.", "App Architecture Best Practices.", "Angular js Best Practices"]
+      }]
+    }, {
     "id": 2,
+    "back": "home",
+    "next": "steps.the-app",
     "intro": "Understanding Your File Structure",
-    "blocks": [
-      "Think of your root directory as an Object."
-    ],
+    "blocks": ["Think of your root directory as an Object."],
     "headers": ["Think of any sub directory or file as key, and it\"s contents as the value.", "How would you properly organize these Objects?", "I usually like to separate things by concern."],
     "content": [{
       "title": "app",
@@ -50,5 +61,94 @@
       "title": "index.html",
       "children": ["Primary index view.", "This is the html template that shows the single page application"]
     }]
-  }]
+    },
+    {
+    "id": 3,
+    "back": "steps.file-structure",
+    "next": "steps.lets-build",
+    "intro": "The App Folder",
+    "blocks": ["Let's dive into the angluar app."],
+    "headers": [
+      "Do NOT USE the angular-seed!! It is a terrible start for a scalable app.",
+      "This structure is the bare bones of a very scalable application."
+    ],
+    "content": [
+      {
+      "title": "Angular Best Practices",
+      "type": "list",
+      "head": true,
+      "children": [
+          "If you don't understand the strange syntax I am using, we will discuss the angular style guide later."
+        ]
+      },{
+      "title": "app.js",
+      "type": "list",
+      "head": true,
+      "children": [
+          "This is a root angular module.",
+          "The name of this module is the same as the ng-app='app' in the index.html.",
+          "Also contains a config component that tells the rout to go to '/' if it cannot find the requested url."
+        ]
+      }, {
+      "title": "controllers/",
+      "type": "list",
+      "head": true,
+      "children": [
+          "Contains all global controllers.",
+          "Currenlty contains the controller for the sidebar."
+        ]
+      } , {
+      "title": "services/",
+      "children": [
+          "Contains all globally used services.",
+          "Currently contains a service to fetch content from build.json."
+        ]
+      }, {
+      "title": "states/",
+      "children": [
+          "Contains all states and nested states for the app.",
+          "Each state contains it's own html view, it's own controller, and it's own stateProvider."
+        ]
+      }, {
+      "title": "templates/",
+      "children": [
+          "Contains all globally used templates, like the sidebar, header, and footer."
+        ]
+      }
+    ]
+    },
+    {
+      "id": 4,
+      "next": false,
+      "back": "steps.the-app",
+      "intro": "Lets Build!",
+      "blocks": ["Time to think about scalling this out!"],
+      "headers": [
+          "To scale, we are going to need a few things."
+        ],
+      "content": [
+        {
+          "title":"Node.js",
+          "type": "list",
+          "head": false,
+          "children": [
+            "Google's V8 engine.",
+            "Our app is pointless without the power of node.",
+            "Provides us with a server, data management, deployment, debugging, testing, automating tasks, and so much more."
+          ]
+        },{
+          "title": "Prepare your file structure for more.",
+          "type": "list",
+          "head": true,
+          "children": [
+            "Lets put everything that will be served and deployed into one directory.",
+            "I personally like calling the directory 'client', Some people call it 'public'",
+            "Lets go ahead and re-organize our directory.",
+            "Run the following in the command line"
+          ],
+          "pre":"slush build:client"
+        }
+      ]
+    }
+  ]
 }

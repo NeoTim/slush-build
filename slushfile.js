@@ -25,3 +25,4 @@ var gulp = require('gulp'),
 gulp = require('./generators/app')(gulp, g, install, conflict, template, rename, _, inflection, inquirer, mkdirp);
 gulp = require('./generators/run')(gulp, g, install, conflict, template, rename, _, inflection, inquirer, mkdirp, express);
 gulp = require('./generators/fileStructure')(gulp, g, install, conflict, template, rename, _, inflection, inquirer, mkdirp);
+gulp = require('./generators/client')(gulp, g, install, conflict, template, rename, _, inflection, inquirer, mkdirp);
