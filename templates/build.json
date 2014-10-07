@@ -1,0 +1,54 @@
+{
+  "appName": "Build",
+  "slugifiedAppName": "build",
+  "humanizedAppName": "Build",
+  "capitalizedAppAuthor": "",
+  "level": "beginner",
+  "states": [{
+    "id": 1,
+    "title": "Home",
+    "state": "home"
+  }, {
+    "id": 2,
+    "title": "File Structure",
+    "state": "steps.file-structure"
+  }],
+  "content": [{
+    "id": 1,
+    "intro": "Welcome!",
+    "headers": ["Lets Build a Fullstack Application!", "I will walk you through the following."],
+    "content": [{
+      "type": "list",
+      "head": false,
+      "children": ["The contents of your working directory.", "Working with the client side.", "App Architecture Best Practices.", "Angular js Best Practices"]
+    }]
+  }, {
+    "id": 2,
+    "intro": "Understanding Your File Structure",
+    "blocks": [
+      "Think of your root directory as an Object."
+    ],
+    "headers": ["Think of any sub directory or file as key, and it\"s contents as the value.", "How would you properly organize these Objects?", "I usually like to separate things by concern."],
+    "content": [{
+      "title": "app",
+      "type": "list",
+      "head": true,
+      "children": ["Conains all Angular js script files.", "Conains all html templates used by Angular js", "Also contains all css files, that are for each specific html file"]
+    }, {
+      "title": "bower_components",
+      "children": ["Contains all downloaded bower files, and all dependencies for the angular app"]
+    }, {
+      "title": "styles",
+      "children": ["Any primary styles that overwrite all styles"]
+    }, {
+      "title": ".bowerrc",
+      "children": ["This file tells bower where to place the install dependencies.", "For example: if you don't like using the word bower_components then change the name in .bowerrc."]
+    }, {
+      "title": "bower.json",
+      "children": ["Contains all Bower Components Configuration.", "You can find more about bower at bowerjs.com"]
+    }, {
+      "title": "index.html",
+      "children": ["Primary index view.", "This is the html template that shows the single page application"]
+    }]
+  }]
+}

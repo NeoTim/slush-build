@@ -1,0 +1,22 @@
+<div class="blog-post">
+  <h2 class="blog-post-title">{{content.intro}}</h2>
+  <!-- <p class="blog-post-meta">October 2014 by <a href="#">Joel<strong>Cox</strong></a></p> -->
+  <hr>
+
+  <blockquote>
+    <p><strong>{{content.blocks[0]}}</strong></p>
+  </blockquote>
+  <p ng-repeat="head in content.headers">{{head}}</p>
+  <ul>
+    <li ng-repeat="thing in content.content"><strong>{{thing.title}}</strong>
+      <ul>
+        <li ng-repeat="child in thing.children">{{child}}</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<ul class="pager">
+  <li><a ui-sref="home">Home</a></li>
+  <li><a ui-sref="steps.file-structure">Next</a></li>
+</ul>

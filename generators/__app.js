@@ -1,5 +1,14 @@
 module.exports = function(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp){
   gulp.task('default', function (done) {
+      if (!this.args[0]) {
+        console.log('******    Incorrect usage of the sub-generator!!          ******');
+        console.log('******    Try slush build <level-name>                    ******');
+        console.log('******    Ex: slush build biginner                        ******');
+        console.log('******    Ex: slush build basic                           ******');
+        console.log('******    Ex: slush build expert                          ******');
+        console.log('******    Ex: slush build fullstack                       ******');
+        return done();
+      }
       var prompts = [{
               name: 'appName',
               message: 'What would you like to call your application?',
