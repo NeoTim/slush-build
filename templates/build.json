@@ -44,7 +44,7 @@
       "title": "app",
       "type": "list",
       "head": true,
-      "children": ["Conains all Angular js script files.", "Conains all html templates used by Angular js", "Also contains all css files, that are for each specific html file"]
+      "children": ["Contains all Angular js script files.", "Contains all html templates used by Angular js", "Also contains all css files, that are for each specific html file"]
     }, {
       "title": "bower_components",
       "children": ["Contains all downloaded bower files, and all dependencies for the angular app"]
