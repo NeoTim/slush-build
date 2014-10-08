@@ -23,11 +23,11 @@
   </head>
   <body>
 
-    <div ng-include="'app/templates/menu.html'" class="blog-masthead"></div>
+    <div ng-include="'app/core/menu/menu.html'" class="blog-masthead"></div>
 
     <div class="container">
 
-      <div ng-include="'app/templates/header.html'" class="blog-header"></div>
+      <div ng-include="'app/core/header/header.html'" class="blog-header"></div>
 
       <div class="row">
 
@@ -37,13 +37,13 @@
 
         </div>
 
-        <div ng-include="'app/templates/sidebar.html'" class="col-sm-3 col-sm-offset-1 blog-sidebar"></div>
+        <div ng-include="'app/core/sidebar/sidebar.html'" class="col-sm-3 col-sm-offset-1 blog-sidebar"></div>
 
       </div>
 
     </div>
 
-    <div ng-include="'app/templates/footer.html'" class="blog-footer"></div>
+    <div ng-include="'app/core/footer/footer.html'" class="blog-footer"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="bower_components/lodash/dist/lodash.js"></script>
