@@ -4,7 +4,7 @@
     .module( 'app' )
     .service( 'StatesService', StatesService );
 
-    function StatesService( $http, $q ){
+    function StatesService( $http, $q, Buildfile){
 
       this.content = [];
 
@@ -16,7 +16,7 @@
           return fetchData();
         }
 
-        return $http.get('build.json')
+        return $http.get(Buildfile)
           .then( function ( result ){
             console.log( result.data );
             that.content = result.data;
@@ -30,7 +30,7 @@
 
         var that = this;
 
-        return $http.get('build.json')
+        return $http.get(Buildfile)
           .then( function ( result ){
             // that.content = result.data;
             return _.where( result.data.content, {id:id} )[0];

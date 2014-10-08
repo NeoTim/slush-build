@@ -19,10 +19,11 @@ var gulp = require('gulp'),
     inquirer = require('inquirer'),
     mkdirp = require('mkdirp'),
     express = require('express'),
-    fs      = require('fs-extra');
+    fs      = require('fs-extra'),
+    del     = require('del');
 
 // load generators
-gulp = require('./generators/app')(gulp, g, install, conflict, template, rename, _, inflection, inquirer, mkdirp);
-gulp = require('./generators/run')(gulp, g, install, conflict, template, rename, _, inflection, inquirer, mkdirp, express);
-gulp = require('./generators/fileStructure')(gulp, g, install, conflict, template, rename, _, inflection, inquirer, mkdirp);
-gulp = require('./generators/client')(gulp, g, install, conflict, template, rename, _, inflection, inquirer, mkdirp);
+gulp = require('./generators/app')(gulp, g, install, conflict, template, rename, _, inflection, inquirer, mkdirp, del);
+gulp = require('./generators/run')(gulp, g, install, conflict, template, rename, _, inflection, inquirer, mkdirp, express, del);
+gulp = require('./generators/fileStructure')(gulp, g, install, conflict, template, rename, _, inflection, inquirer, mkdirp, del);
+gulp = require('./generators/client')(gulp, g, install, conflict, template, rename, _, inflection, inquirer, mkdirp, del);

@@ -4,6 +4,7 @@
   "humanizedAppName": "Build",
   "capitalizedAppAuthor": "Joel",
   "level": "beginner",
+  "clientDir": "./",
   "states": [{
     "id": 1,
     "title": "Home",
